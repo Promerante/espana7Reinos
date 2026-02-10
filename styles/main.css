@@ -1,7 +1,7 @@
 :root {
     --white: #fff;
-    --overlay-end: rgba(0, 0, 0, 0.65);
-    --overlay-start: rgba(0, 0, 0, 0.08);
+    --overlay-end: rgba(0, 0, 0, 0.45);
+    --overlay-start: rgba(0, 0, 0, 0.00);
 }
 
 * {
@@ -15,7 +15,7 @@ body {
     color: #111;
 }
 
-/* HEADER */
+/* Cabecera */
 .site-header {
     position: absolute;
     top: 0;
@@ -53,10 +53,10 @@ body {
     width: 18rem;
 }
 
-/* HERO */
+/* Portada */
 .hero {
     position: relative;
-    background-image: url("/españa7Reinos/images/hero.png");
+    background-image: url("../images/hero.png");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -105,7 +105,7 @@ body {
     font-weight: 600;
 }
 
-/* BRAND */
+/* Ajuste para titulo superior izquierda */
 .brandLarge {
     font-size: clamp(1rem, 2.5vw, 2rem);
     font-weight: 900;
@@ -118,22 +118,85 @@ body {
     line-height: 1.1;
     opacity: 0.95;
 }
-
+/* Fin Portada: MAIN */
 /* INTRO TEXT */
 .intro {
-    padding: 60px 40px;
-    max-width: 900px;
     margin: 0 auto;
 }
 
 .intro p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 1.8vw, 3rem);
     line-height: 1.6;
     margin: 2rem 0;
-    text-align: center;
+    text-align: left;
+    padding: 0 40px;
+}
+.intro p.secondText {
+    margin-bottom: 8rem;
+}
+/* CARDS SECTION */
+.cards-section {
+    padding: 4rem 40px;
+    background-color: #fff;
 }
 
-/* MAIN */
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.card {
+    position: relative;
+    height: 280px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 8px solid #d0d0d0;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    color: white;
+}
+
+.card-overlay h3 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+
+
 
 
 
@@ -151,64 +214,14 @@ body {
     .hero h1 {
         font-size: clamp(1.4rem, 5.5vw, );
     }
-}
-/* CARDS SECTION */
-.cards-section {
-    padding: 4rem 40px;
-    background-color: #f5f5f5;
-}
 
-.cards-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-.card {
-    position: relative;
-    height: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .card {
+        height: 250px;
+    }
+    
 }
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.card-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    color: white;
-}
-
-.card-overlay h3 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 900;
-    line-height: 1.2;
-    margin: 0;
-}
-
-.card-icon {
-    width: 56px;
-    height: 56px;
-    border: 3px solid white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
