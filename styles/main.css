@@ -16,27 +16,36 @@ body {
 }
 
 /* Cabecera */
-.site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    border-bottom: 3px solid #f8f9fb;
+.route-figure {
+    display: flex;
+    align-items: flex-end; /* align children to the bottom */
+    gap: 1rem;
+    width: 50%;
+    justify-self: center;
 }
 
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 3rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    color: var(--white);
+.route-figure .route-image {
+    flex: 0 0 300px;       /* image column width (adjust as needed) */
+    aspect-ratio: 3 / 4;   /* preserve rectangular shape */
+    overflow: hidden;
+    border-radius: 4px;
 }
 
-.main-nav {
-    display: flex;
+.route-figure .route-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.route-caption-right {
+    align-self: flex-end;   /* ensure caption sits at the bottom of the image */
+    font-weight: 700;
+    color: #000;
+    background: rgba(255,255,255,0.9);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
     gap: 3.5rem;
     margin-left: auto;
 }
@@ -49,7 +58,8 @@ body {
     line-height: 1.1;
     align-self: center;
 }
-.mainNavFix{
+
+.mainNavFix {
     width: 18rem;
 }
 
@@ -92,7 +102,6 @@ body {
     max-width: 80vw;
 }
 
-
 .logo-circle {
     width: 56px;
     height: 56px;
@@ -113,12 +122,13 @@ body {
 }
 
 .branSmall {
-     font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 2rem);
     font-weight: 500;
     line-height: 1.1;
     opacity: 0.95;
 }
-/* Fin Portada: MAIN */
+
+/*MAIN */
 /* INTRO TEXT */
 .intro {
     margin: 0 auto;
@@ -131,10 +141,12 @@ body {
     text-align: left;
     padding: 0 40px;
 }
+
 .intro p.secondText {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
-/* CARDS SECTION */
+
+/* ACTIVIDADES Y TARIFAS */
 .cards-section {
     padding: 4rem 40px;
     background-color: #fff;
@@ -154,8 +166,27 @@ body {
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border: 8px solid #d0d0d0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15),
+        8px 8px 0 #8f8f8f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+        12px 12px 0 #c0c0c0;
+}
+
+.card1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15),
+        -8px 8px 0 #8f8f8f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+        -12px 12px 0 #c0c0c0;
 }
 
 .card img {
@@ -163,6 +194,10 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.card1 img {
+    transform: scaleX(-1);
 }
 
 .card-overlay {
@@ -181,24 +216,80 @@ body {
     font-weight: 900;
     line-height: 1.1;
     margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .card-icon {
-    width: 56px;
-    height: 56px;
-    border: 3px solid white;
+    width: 150px;
+    height: 150px;
+    border: 4px solid white;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 5rem;
     flex-shrink: 0;
+    transition: background 0.3s, color 0.3s;
 }
 
+.card:hover .card-icon {
+    background: rgba(255, 255, 255, 1);
+    color: #000000;
+}
 
+/* MAPA DE ESPAÑA*/
+.route-section {
+    padding: 4rem 40px;
+    background-color: #fff;
+    text-align: left;
+}
 
+.route-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
 
+.route-section .route-intro {
+    margin: 1rem 5rem 2rem;
+    font-size: clamp(1rem, 1.6vw, 1.8rem);
+    line-height: 1.5;
+    text-align: center;
+}
 
+.route-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-items: center; 
+}
+
+.route-image {
+    position: relative;
+    width: 50%;                
+    aspect-ratio: 3 / 4;/* Con esto fuerzo la "forma" de rectangulo */
+    overflow: hidden;          
+    border-radius: 4px;
+    display: flex;
+}
+
+.route-image img {
+    width: 100%;
+    height: 100%;             
+    object-fit: cover;   
+}
+
+.route-caption {
+    color: #000;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.route-map img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+}
 
 /* Responsive */
 @media (max-width:1158px) {
@@ -223,5 +314,5 @@ body {
     .card {
         height: 250px;
     }
-    
+
 }
