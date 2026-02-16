@@ -128,7 +128,7 @@ body {
 .intro p {
     font-size: clamp(1rem, 1.8vw, 3rem);
     line-height: 1.6;
-    margin: 2rem 0;
+    margin: 3rem 0;
     text-align: left;
     padding: 0 40px;
 }
@@ -270,14 +270,15 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 4px;
-    padding-left: clamp(0.5rem, 3vw, 3rem);
+    border-radius: 5px;
+    margin-left: clamp(0.5rem, 3vw, 3rem);
+    /*border: 2px solid #000; Estos bordes pueden quedar bien*/
 }
 
 /* mover la caption fuera a la derecha y alineada al fondo */
 .route-image .route-caption {
     position: absolute;
-    left: calc(100%);
+    left: calc(112%);
     bottom: 0;
     padding: 0.4rem 0.8rem;
     color: #000;
