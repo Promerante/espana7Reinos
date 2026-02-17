@@ -149,4 +149,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('keydown', onKeyDown, { passive: false });
+
+    // =========================
+    // HOVER EN PINS (dot/label)
+    // =========================
+    const mapPins = document.querySelectorAll('.map-pin');
+    mapPins.forEach(pin => {
+        const dot = pin.querySelector('.pin-dot');
+        const label = pin.querySelector('.pin-label');
+        const routeImage= document.querySelector('.route-image img');
+        if (!dot || !label || !routeImage) return;
+
+        pin.addEventListener('mouseenter', () => {
+            const labelText = label.textContent.trim();
+            const newSrc= `images/spainMap/${labelText}.png`;
+            routeImage.src = newSrc;
+            dot.style.background = '#a30000';
+            dot.style.borderColor = '#e99b9b';
+            dot.style.transform = 'scale(1.5)';
+            dot.style.margin = '5px';
+            label.style.background = '#a30000';
+            label.style.color = '#ffffff';
+        });
+
+        pin.addEventListener('mouseleave', () => {
+            // restore whatever was defined by css
+            dot.style.background = '';
+            dot.style.borderColor = '';
+            dot.style.transform = '';
+            label.style.background = '';
+            label.style.color = '';
+        });
+    });
 });
