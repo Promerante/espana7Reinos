@@ -94,16 +94,21 @@ body {
 }
 
 .logo-circle {
-    width: 56px;
-    height: 56px;
+    width: 100px;
+    height: auto;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #222;
     font-weight: 600;
 }
+.logo-circle img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
 
 /* Ajuste para titulo superior izquierda */
 .brandLarge {
@@ -447,7 +452,6 @@ body {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
     display: flex;
     align-items: center;
     justify-content: center;
