@@ -124,227 +124,75 @@ body {
     opacity: 0.95;
 }
 
-/*MAIN */
-/* INTRO TEXT */
-.intro {
-    margin: 0 auto;
-}
 
-.intro p {
-    font-size: clamp(1rem, 1.8vw, 3rem);
-    line-height: 1.6;
-    margin: 3rem 0;
-    text-align: left;
-    padding: 0 40px;
-}
-
-.intro p.secondText {
-    margin-bottom: 4rem;
-}
-
-/* ACTIVIDADES Y TARIFAS */
-.cards-section {
+/* INTRO SECTION */
+.intro-section {
     padding: 4rem 40px;
-    background-color: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.cards-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.intro-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
 }
 
-.card {
-    position: relative;
-    height: 280px;
-    border-radius: 4px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15),
-        8px 8px 0 #8f8f8f;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
-        12px 12px 0 #c0c0c0;
-}
-
-.card1 {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15),
-        -8px 8px 0 #8f8f8f;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card1:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
-        -12px 12px 0 #c0c0c0;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.card1 img {
-    transform: scaleX(-1);
-}
-
-.card-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+.intro-text {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    color: white;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.card-overlay h3 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 900;
-    line-height: 1.1;
+.intro-text p {
+    font-size: 20px !important;
+    line-height: 1.8;
+    color: #333;
     margin: 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: justify;
+
 }
 
-.card-icon {
-    width: 150px;
-    height: 150px;
-    border: 4px solid white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    font-size: 5rem;
-    flex-shrink: 0;
-    transition: background 0.3s, color 0.3s;
+.intro-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.card:hover .card-icon {
-    background: rgba(255, 255, 255, 1);
-    color: #000000;
+.intro-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-/* MAPA DE ESPAÑA*/
-.route-section {
+.intro-text-full {
+    font-size: 20px !important;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    margin: 0;
+
+}
+.countries-Map {
     padding: 4rem 40px;
-    background-color: #fff;
-    text-align: left;
-}
-
-.route-section h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.route-section .route-intro {
-    margin-top: 1rem;
-    margin-bottom: 5rem;
-    font-size: clamp(1rem, 1.6vw, 1.8rem);
-    line-height: 1.5;
     text-align: center;
 }
 
-.route-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    justify-items: stretch;
-}
-
-.route-image {
-    position: relative;
-    width: 50%;
-    aspect-ratio: 3 / 4;
-    overflow: visible;
-    border-radius: 4px;
+.countries-Map img {
+    width: 95%;
+    height: auto;
+    max-width: 1900px;
     display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
-
-.route-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 5px;
-    margin-left: clamp(0.5rem, 3vw, 3rem);
-    /*border: 2px solid #000; Estos bordes pueden quedar bien*/
-}
-
-/* mover la caption fuera a la derecha y alineada al fondo */
-.route-image .route-caption {
-    position: absolute;
-    left: calc(112%);
-    bottom: 0;
-    padding: 0.4rem 0.8rem;
-    color: #000;
-    white-space: nowrap;
-    z-index: 5;
-    font-size: clamp(0.5rem, 1.6vw, 1.6rem);
-    font-weight: 600;
-}
-
-.route-sub-caption {
-    font-weight: 400;
-    font-size: clamp(0.5rem, 1.6vw, 1.5rem);
-}
-
-.route-map img {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-}
-
-/* MAP PINS */
-.route-map {
-    position: relative;
-
-}
-
-.map-pin {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    transform: translate(-50%, -50%);
-    pointer-events: auto;
-}
-
-.map-pin .pin-dot {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: #112966;
-    border: 6px solid #8295c4;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-    flex: 0 0 auto;
-}
-
-.map-pin .pin-label {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 0.45rem 0.7rem;
-    border-radius: 6px;
-    font-weight: 700;
-    color: #111;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    white-space: nowrap;
-    border: 1px solid #000;
-    font-size: clamp(0.2rem, 1.6vw, 1.3rem);
-}
-
-.map-pin.label-left {
-    flex-direction: row-reverse;
-}
-
 /* GALERÍA*/
 .gallery-grid {
     margin: 0 auto;
@@ -528,7 +376,10 @@ body {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
+
+
 /* Responsive */
+
 @media (max-width:1158px) {
     .hero-inner {
         padding: 2rem;
@@ -562,7 +413,28 @@ body {
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
+    .intro-section {
+        padding: 2rem 20px;
+    }
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .intro-image{
+        margin:0 30px;
+        width: 90%;
+    }
+    .intro-text p,
+    .intro-text-full {
+        text-align: left;
+        margin: 0 !important;
+    }
+
+    .countries-Map {
+        padding: 2rem 20px;
+    }
     .footer-inner {
         flex-direction: column;
         align-items: center;
@@ -592,34 +464,4 @@ body {
     }
 }
 
-@media (max-width: 600px) {
-    .map-pin .pin-dot {
-        width: 16px;
-        height: 16px;
-        border-width: 4px;
-    }
 
-    .map-pin .pin-label {
-        font-size: 0.9rem;
-        white-space: normal;
-    }
-
-    .map-pin.stack {
-        flex-direction: column;
-        transform: translate(-50%, -60%);
-        gap: 0.35rem;
-    }
-}
-
-@media (max-width: 520px) {
-    .footer-logo {
-        width: 96px;
-        height: 96px;
-    }
-
-    .social-icon {
-        width: 46px;
-        height: 46px;
-        border-width: 2px;
-    }
-}
