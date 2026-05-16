@@ -320,6 +320,9 @@ body {
     pointer-events: auto;
     text-decoration: none;
 }
+ a:-webkit-any-link {
+    text-decoration: none;
+ }
 
 .map-pin .pin-dot {
     width: 2rem;
