@@ -249,7 +249,7 @@ body {
 .route-section .route-intro {
     margin-top: 1rem;
     margin-bottom: 5rem;
-    font-size: clamp(1rem, 1.6vw, 1.8rem);
+    font-size: clamp(1.5rem, 1.6vw, 1.8rem);
     line-height: 1.5;
     text-align: center;
 }
