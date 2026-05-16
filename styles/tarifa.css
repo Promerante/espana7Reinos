@@ -1,0 +1,43 @@
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    padding: 5px 1rem 3rem;
+    flex-wrap: wrap;
+}
+
+.priceCard {
+    flex: 1 1 min(320px, 42%);
+    max-width: 420px;
+    padding: 2rem;
+}
+
+.priceCard h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.priceCard p {
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.priceCard span {
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+    color: #333;
+}
+
+@media (max-width: 400px) {
+    .pricing {
+        gap: 1.5rem;
+        padding: 3rem 1.5rem 4rem;
+    }
+
+    .priceCard {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+}

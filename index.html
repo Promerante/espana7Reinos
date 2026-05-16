@@ -7,7 +7,7 @@
     <title>España A Través De Los 7 Reinos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="icon" type="image/png" href="images/logo.png" />   
+    <link rel="icon" type="image/png" href="images/logo.png" />
 </head>
 
 <body>
@@ -20,12 +20,12 @@
                 </span>
             </div>
             <nav class="main-nav">
-                <a href="#">Restaurantes</a>
-                <a href="#">Hoteles</a>
+                <a href="pages/nav/restaurantes.html">Restaurantes</a>
+                <a href="pages/nav/hoteles.html">Hoteles</a>
                 <a href="#" class="mainNavFix">¿Qué tanto sabes de Juego de Tronos?</a>
             </nav>
 
-            <div class="logo-circle"><img src="images/logo.png" alt=""></div>
+            <a href="index.html" class="logo-circle"><img src="images/logo.png" alt=""></a>
         </div>
     </header>
 
@@ -53,14 +53,14 @@
                     <img src="images/actividadesTalleres.webp" alt="Actividades y Talleres">
                     <div class="card-overlay">
                         <h3>Actividades<br>y Talleres</h3>
-                        <div class="card-icon">→</div>
+                        <div class="card-icon" id="iconoTalleres" data-route="pages/talleres.html">→</div>
                     </div>
                 </div>
                 <div class="card">
                     <img src="images/tarifas.jpeg" alt="Tarifas">
                     <div class="card-overlay">
                         <h3>Tarifas</h3>
-                        <div class="card-icon">→</div>
+                        <div class="card-icon" id="iconoTarifas" data-route="pages/tarifas.html">→</div>
                     </div>
                 </div>
             </div>
@@ -81,49 +81,64 @@
                     <img src="images/spainMap/spainMap.png" alt="Mapa de España">
                     <!-- aquí se podrán posicionar los marcadores dinámicamente más adelante -->
                     <!-- Pines de ejemplo -->
-                    <div class="map-pin" style="left:33%; top:80%;">
+                    <a href="pages/cities/sevilla.html" class="map-pin" style="left:33%; top:80%;">
+
                         <span class="pin-dot" aria-hidden="true"></span>
                         <span class="pin-label">Sevilla</span>
-                    </div>
+                    </a>
 
-                    <div class="map-pin label-left" style="left:15%; top:52%;">
+                    <a href="pages/cities/caceres.html" class="map-pin label-left" style="left:15%; top:52%;">
                         <span class="pin-dot" aria-hidden="true"></span>
                         <span class="pin-label">Cáceres</span>
-                    </div>
+                    </a>
 
-                    <div class="map-pin" style="left:72%; top:45%;">
+
+                    <a href="pages/cities/castellon.html" class="map-pin" style="left:72%; top:45%;">
                         <span class="pin-dot" aria-hidden="true"></span>
                         <span class="pin-label">Castellón</span>
-                    </div>
+                    </a>
 
-                    <div class="map-pin" style="left:88%; top:22%;">
+
+                    <a href="pages/cities/gerona.html" class="map-pin" style="left:88%; top:22%;">
                         <span class="pin-dot" aria-hidden="true"></span>
                         <span class="pin-label">Gerona</span>
-                    </div>
+                    </a>
+                    </a>
 
-                    <div class="map-pin label-left" style="left:29%; top:10%;">
+                    <a href="pages/cities/bilbao.html" class="map-pin label-left" style="left:29%; top:10%;">
                         <span class="pin-dot" aria-hidden="true"></span>
                         <span class="pin-label">Zumia y Gaztelugatxe</span>
-                    </div>
+                    </a>
+
                 </div>
             </div>
         </section>
         <section class="gallery-section">
             <div class="gallery-grid">
                 <figure class="gallery-item gallery-sevilla">
-                    <img src="images/gallery/Sevilla%201.jpeg" alt="Sevilla">
+                    <a href="pages/cities/sevilla.html">
+                        <img src="../../images/gallery/Sevilla%201.jpeg" alt="Sevilla">
+                    </a>
                 </figure>
                 <figure class="gallery-item gallery-gerona">
-                    <img src="images/gallery/Gerona%202.jpeg" alt="Gerona">
+                    <a href="pages/cities/gerona.html">
+                        <img src="../../images/gallery/Gerona%202.jpeg" alt="Gerona">
+                    </a>
                 </figure>
                 <figure class="gallery-item gallery-castellon">
-                    <img src="images/gallery/Castellon%203.jpeg" alt="Castellón">
+                    <a href="pages/cities/castellon.html">
+                        <img src="../../images/gallery/Castellon%203.jpeg" alt="Castellón">
+                    </a>
                 </figure>
                 <figure class="gallery-item gallery-gaztelugatxe">
-                    <img src="images/gallery/Gaxtelugatxe%204.jpeg" alt="Gaztelugatxe">
+                    <a href="pages/cities/bilbao.html">
+                        <img src="../../images/gallery/Gaxtelugatxe%204.jpeg" alt="Gaztelugatxe">
+                    </a>
                 </figure>
                 <figure class="gallery-item gallery-caceres">
-                    <img src="images/gallery/Caceres%205.jpeg" alt="Cáceres">
+                    <a href="pages/cities/caceres.html">
+                        <img src="../../images/gallery/Caceres%205.jpeg" alt="Cáceres">
+                    </a>
                 </figure>
             </div>
         </section>
@@ -168,4 +183,5 @@
     </section>
     <script src="scripts/main.js" defer></script>
 </body>
+
 </html>

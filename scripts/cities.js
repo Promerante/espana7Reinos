@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const OFFSET_Y = 0;
     const SCROLL_KEYS_DOWN = new Set(['ArrowDown', 'PageDown', ' ']);
     const SCROLL_KEYS_UP = new Set(['ArrowUp', 'PageUp', 'Home']);
+    const brand = document.querySelector(".brand");
 
     // =========================
     // PRIMITIVAS DE POSICIÓN
@@ -146,7 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
     }
-
+brand.addEventListener("click", () => {
+        window.location.href = "../../index.html";
+    });
     window.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('keydown', onKeyDown, { passive: false });
 

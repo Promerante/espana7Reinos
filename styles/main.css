@@ -55,6 +55,7 @@ body {
 }
 
 /* Portada */
+
 .hero {
     position: relative;
     background-image: url("../images/hero.png");

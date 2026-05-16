@@ -1,0 +1,128 @@
+:root {
+    --nav-bg: rgba(0, 0, 0, 0.55);
+    --card-bg: #ffffff;
+}
+
+.restaurantes,
+.hoteles {
+    padding: 3rem 4rem 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.restaurant-list,
+.hotel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.restaurant-item,
+.hotel-item {
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    padding-bottom: clamp(2rem, 5vw, 3.5rem);
+
+}
+
+.restaurant-item:last-child,
+.hotel-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.restaurant-item.with-image,
+.hotel-item.with-image {
+    display: flex;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: flex-start;
+}
+
+.restaurant-item.with-image.image-left,
+.hotel-item.with-image.image-left {
+    flex-direction: row-reverse;
+}
+
+.restaurant-content,
+.hotel-content {
+    flex: 1;
+}
+
+.restaurant-item strong,
+.hotel-item strong {
+    display: block;
+    font-size: clamp(2.2rem, 1.8vw, 1.35rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.hotel-item h3 {
+    font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+    font-weight: 800;
+    margin: 0.25rem 0 0.75rem 0;
+}
+
+.restaurant-item p,
+.hotel-item p {
+    margin: 0;
+    font-size: clamp(2rem, 1.6vw, 1.15rem);
+    line-height: 1.65;
+    color: #333;
+}
+
+.restaurant-image,
+.hotel-image {
+    width: clamp(200px, 30vw, 320px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: clamp(8px, 1vw, 12px);
+    flex-shrink: 0;
+}
+.hotel-image{
+    width: clamp(400px, 30vw, 320px);
+}
+
+@media (max-width: 768px) {
+    .restaurantes,
+    .hoteles {
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    .restaurant-item.with-image,
+    .hotel-item.with-image,
+    .hotel-item.with-image.image-left {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .restaurant-image,
+    .hotel-image {
+        width: 100%;
+        max-width: 400px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurantes,
+    .hoteles {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .restaurant-item,
+    .hotel-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .restaurant-item strong,
+    .hotel-item strong {
+        font-size: 1.05rem;
+    }
+
+    .restaurant-item p,
+    .hotel-item p {
+        font-size: 0.95rem;
+    }
+}

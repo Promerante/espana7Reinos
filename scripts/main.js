@@ -2,14 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================
     // VARIABLES GLOBALES
     // =========================
-    const introParagraph = document.querySelector('.intro p');
+    // Detectar si estamos en página de restaurantes y ajustar el target de scroll
+    const restaurantes = document.querySelector('.restaurantes');
+    const hoteles = document.querySelector('.hoteles');
+    
+    const scrollTarget = restaurantes 
+        ? document.querySelector('.restaurant-item .restaurant-content strong')
+        : hoteles
+        ? document.querySelector('.hotel-item .hotel-content strong')
+        : document.querySelector('.intro p');
+    
+    const introParagraph = scrollTarget;
     const DURATION_MS = 1200;
     const TOP_TOLERANCE = 2;
     const ZONE_TOLERANCE = 40;   // necesario para que el scroll “normal” no se quede atascado y no se active los eventos
     const OFFSET_Y = 0;
     const SCROLL_KEYS_DOWN = new Set(['ArrowDown', 'PageDown', ' ']);
     const SCROLL_KEYS_UP = new Set(['ArrowUp', 'PageUp', 'Home']);
-
+    const brand = document.querySelector(".brand");
+    const brandTalleres = document.querySelector(".brandTalleres");
+    const iconosIndex = document.querySelectorAll(".card-icon");
+    
     // =========================
     // PRIMITIVAS DE POSICIÓN
     // =========================
@@ -157,12 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
     mapPins.forEach(pin => {
         const dot = pin.querySelector('.pin-dot');
         const label = pin.querySelector('.pin-label');
-        const routeImage= document.querySelector('.route-image img');
+        const routeImage = document.querySelector('.route-image img');
         if (!dot || !label || !routeImage) return;
 
         pin.addEventListener('mouseenter', () => {
             const labelText = label.textContent.trim();
-            const newSrc= `images/spainMap/${labelText}.png`;
+            const newSrc = `images/spainMap/${labelText}.png`;
             routeImage.src = newSrc;
             dot.style.background = '#a30000';
             dot.style.borderColor = '#e99b9b';
@@ -181,4 +194,36 @@ document.addEventListener('DOMContentLoaded', () => {
             label.style.color = '';
         });
     });
+
+    const indexLink = (() => {
+        const path = window.location.pathname;
+        const pagesIndex = path.indexOf('/pages/');
+        if (pagesIndex !== -1) {
+            return path.slice(0, pagesIndex) + '/index.html';
+        }
+        return path.replace(/\/[^/]*$/, '/index.html');
+    })();
+
+    if (brand) {
+        brand.addEventListener("click", () => {
+            window.location.href = indexLink;
+        });
+    }
+
+    if (brandTalleres) {
+        brandTalleres.addEventListener("click", () => {
+            window.location.href = "../index.html";
+        });
+    }
+
+    if (iconosIndex && iconosIndex.length > 0) {
+        iconosIndex.forEach(icon => {
+            icon.addEventListener("click", () => {
+                const route = icon.dataset.route;
+                if (route) {
+                    window.location.href = route;
+                }
+            });
+        });
+    }
 });
